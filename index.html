@@ -1,82 +1,104 @@
-import React, { useState } from 'react';
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>صنايعى دوت كوم</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React & Babel CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <div id="root"></div>
 
-export default function Snaie3yHomePage() { const [menuOpen, setMenuOpen] = useState(false);
+    <script type="text/babel">
+      function App() {
+        const [menuOpen, setMenuOpen] = React.useState(false);
 
-const toggleMenu = () => setMenuOpen(!menuOpen);
+        const toggleMenu = () => setMenuOpen(!menuOpen);
 
-return ( <div dir="rtl" className="font-sans bg-gray-100"> {/* Header */} <header className="flex justify-between items-center bg-teal-900 text-white px-6 py-4"> <div className="text-2xl font-bold">صنايعى دوت كوم</div> <div className="flex items-center gap-4"> <button className="text-white">تسجيل الدخول</button> <button onClick={toggleMenu} className="text-3xl">☰</button> </div> </header>
+        return (
+          <div>
+            <header className="flex justify-between items-center bg-teal-900 text-white px-6 py-4">
+              <div className="text-2xl font-bold">صنايعى دوت كوم</div>
+              <div className="flex items-center gap-4">
+                <button className="text-white">تسجيل الدخول</button>
+                <button onClick={toggleMenu} className="text-3xl">&#9776;</button>
+              </div>
+            </header>
 
-{/* Menu Overlay */}
-  {menuOpen && (
-    <div className="fixed inset-0 bg-white z-50 p-6">
-      <h2 className="text-xl font-bold mb-4">القائمة</h2>
-      <ul className="space-y-2">
-        <li><a href="#tasks" onClick={toggleMenu}>المهام المتاحة</a></li>
-        <li><a href="#search" onClick={toggleMenu}>ابحث عن صنايعى</a></li>
-        <li><a href="#community" onClick={toggleMenu}>انضم إلى مجتمعنا</a></li>
-        <li><a href="#why" onClick={toggleMenu}>لماذا صنايعى دوت كوم؟</a></li>
-      </ul>
-    </div>
-  )}
+            {menuOpen && (
+              <div className="fixed inset-0 bg-white z-50 p-6">
+                <h2 className="text-xl font-bold mb-4">القائمة</h2>
+                <ul className="space-y-2">
+                  <li><a href="#tasks" onClick={toggleMenu}>المهام المتاحة</a></li>
+                  <li><a href="#search" onClick={toggleMenu}>ابحث عن صنايعى</a></li>
+                  <li><a href="#community" onClick={toggleMenu}>انضم إلى مجتمعنا</a></li>
+                  <li><a href="#why" onClick={toggleMenu}>لماذا صنايعى دوت كوم؟</a></li>
+                </ul>
+              </div>
+            )}
 
-  {/* Tasks Section */}
-  <section id="tasks" className="p-6 bg-white m-4 rounded-xl shadow">
-    <h2 className="text-xl font-semibold mb-4">المهام المتاحة</h2>
-    <ul className="list-disc pr-6 space-y-2">
-      <li>مطلوب سباك في القاهرة</li>
-      <li>مطلوب نجار في الإسكندرية</li>
-      <li>مطلوب كهربائي في الجيزة</li>
-    </ul>
-  </section>
+            <section id="tasks" className="p-6 bg-white m-4 rounded-xl shadow">
+              <h2 className="text-xl font-semibold mb-4">المهام المتاحة</h2>
+              <ul className="list-disc pr-6 space-y-2">
+                <li>مطلوب سباك في القاهرة</li>
+                <li>مطلوب نجار في الإسكندرية</li>
+                <li>مطلوب كهربائي في الجيزة</li>
+              </ul>
+            </section>
 
-  {/* Search Section */}
-  <section id="search" className="p-6 bg-white m-4 rounded-xl shadow">
-    <h2 className="text-xl font-semibold mb-4">ابحث عن صنايعى</h2>
-    <form className="space-y-4">
-      <div>
-        <label className="block">البلد</label>
-        <select className="w-full p-2 border rounded">
-          <option>مصر</option>
-        </select>
-      </div>
-      <div>
-        <label className="block">المحافظة</label>
-        <select className="w-full p-2 border rounded">
-          <option>القاهرة</option>
-          <option>الجيزة</option>
-        </select>
-      </div>
-      <div>
-        <label className="block">التخصص</label>
-        <select className="w-full p-2 border rounded">
-          <option>سباكة</option>
-          <option>نجارة</option>
-          <option>كهرباء</option>
-        </select>
-      </div>
-      <button type="submit" className="bg-teal-700 text-white px-4 py-2 rounded">ابحث</button>
-    </form>
-  </section>
+            <section id="search" className="p-6 bg-white m-4 rounded-xl shadow">
+              <h2 className="text-xl font-semibold mb-4">ابحث عن صنايعى</h2>
+              <form className="space-y-4">
+                <div>
+                  <label className="block">البلد</label>
+                  <select className="w-full p-2 border rounded">
+                    <option>مصر</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block">المحافظة</label>
+                  <select className="w-full p-2 border rounded">
+                    <option>القاهرة</option>
+                    <option>الجيزة</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block">التخصص</label>
+                  <select className="w-full p-2 border rounded">
+                    <option>سباكة</option>
+                    <option>نجارة</option>
+                    <option>كهرباء</option>
+                  </select>
+                </div>
+                <button type="submit" className="bg-teal-700 text-white px-4 py-2 rounded">ابحث</button>
+              </form>
+            </section>
 
-  {/* Community Section */}
-  <section id="community" className="p-6 bg-white m-4 rounded-xl shadow text-center">
-    <h2 className="text-xl font-semibold mb-2">انضم إلى مجتمعنا</h2>
-    <p>عدد الصنايعية: 1200</p>
-    <p>عدد العملاء: 800</p>
-  </section>
+            <section id="community" className="p-6 bg-white m-4 rounded-xl shadow text-center">
+              <h2 className="text-xl font-semibold mb-2">انضم إلى مجتمعنا</h2>
+              <p>عدد الصنايعية: 1200</p>
+              <p>عدد العملاء: 800</p>
+            </section>
 
-  {/* Why Us Section */}
-  <section id="why" className="p-6 bg-white m-4 rounded-xl shadow text-center">
-    <h2 className="text-xl font-semibold mb-2">لماذا صنايعى دوت كوم؟</h2>
-    <p>لأننا نربط بين أفضل الصنايعية والعملاء بطريقة سهلة وآمنة وموثوقة.</p>
-  </section>
+            <section id="why" className="p-6 bg-white m-4 rounded-xl shadow text-center">
+              <h2 className="text-xl font-semibold mb-2">لماذا صنايعى دوت كوم؟</h2>
+              <p>لأننا نربط بين أفضل الصنايعية والعملاء بطريقة سهلة وآمنة وموثوقة.</p>
+            </section>
 
-  {/* Footer */}
-  <footer className="bg-teal-900 text-white text-center py-6 mt-8">
-    <p>&copy; 2025 صنايعى دوت كوم. جميع الحقوق محفوظة.</p>
-  </footer>
-</div>
+            <footer className="bg-teal-900 text-white text-center py-6 mt-8">
+              <p>&copy; 2025 صنايعى دوت كوم. جميع الحقوق محفوظة.</p>
+            </footer>
+          </div>
+        );
+      }
 
-); }
-
-    
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
